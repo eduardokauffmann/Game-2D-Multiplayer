@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Neon.io — Arena Multiplayer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loginBox">
+    <h1>NEON<span>.IO</span></h1>
+    <p>Escolha seu nickname e sua skin para entrar na arena:</p>
+
+    <input type="text" id="nicknameInput" placeholder="Seu nickname..." maxlength="14">
+
+    <div class="skin-section">
+      <span class="skin-label">Selecione sua Skin (<strong id="selectedSkinName">Escudo Estelar</strong>):</span>
+      <div id="skinGrid" class="skin-grid"></div>
+    </div>
+
+    <button id="startBtn">Jogar Agora</button>
+    <small>Controles: W A S D ou Setas</small>
+  </div>
+
+  <div id="gameContainer" class="hidden">
+    <div id="killFeed"></div>
+    <div class="arena-wrapper">
+      <canvas id="gameCanvas" width="900" height="650"></canvas>
+      <div id="scoreboard">
+        <h3>🏆 TOP CÉLULAS</h3>
+        <ol id="scoreList"></ol>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>
